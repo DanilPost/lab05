@@ -4,6 +4,10 @@
 #include "Stack.hpp"
 #include "NoCopyStack.hpp"
 
+TEST(Example, EmptyTest) {
+    EXPECT_TRUE(true);
+}
+
 template <typename T>
 struct Struct
 {
@@ -11,10 +15,6 @@ struct Struct
   T data2;
   T data3;
 };
-
-TEST(Example, EmptyTest) {
-    EXPECT_TRUE(true);
-}
 
 TEST(Test_push, Push_rvalue){
   Stack<int> first;
