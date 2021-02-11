@@ -43,11 +43,11 @@ class NoCopyStack
   template <typename ... Args>
   void push_emplace(Args&&... value)
   {
-   _head = new stack_no_copy_element<T>{{std::forward<Args>(value)...}, _head};
+    _head = new stack_no_copy_element<T>{{std::forward<Args>(value)...}, _head};
   }
   void push(T&& value)
   {
-    _head = new stack_no_copy_element<T>{value, _head};
+    _head = new stack_no_copy_element<T>{std::forward<T>(value), _head};
   }
 
   const T& head() const
