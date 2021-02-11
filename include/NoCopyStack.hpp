@@ -23,9 +23,9 @@ class NoCopyStack
   }
   explicit NoCopyStack(const NoCopyStack& stack) = delete;
 
-  NoCopyStack(NoCopyStack&& stack) = default;
+  NoCopyStack(NoCopyStack&& stack) noexcept = default;
 
-  auto operator = (NoCopyStack&& stack) -> NoCopyStack& = default;
+  auto operator = (NoCopyStack&& stack) noexcept -> NoCopyStack& = default;
 
   ~NoCopyStack()
   {

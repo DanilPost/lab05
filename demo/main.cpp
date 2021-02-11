@@ -7,9 +7,9 @@ template <typename T>
 struct Struct
 {
   Struct(T d1, T d2, T d3) : data1(d1), data2(d2), data3(d3){};
-  explicit Struct(const Struct& stack) = delete;
+  explicit Struct(const Struct& stack) noexcept = delete;
   Struct(Struct&& stack) = default;
-  auto operator=(Struct&& stack) -> Struct& = default;
+  auto operator=(Struct&& stack) noexcept -> Struct& = default;
   T data1;
   T data2;
   T data3;
