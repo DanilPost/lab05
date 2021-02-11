@@ -61,6 +61,7 @@ TEST(NoCopyStack, Test_Push_Pop){
   second.push(std::move(test_struct));
   Struct<int> test_struct2 = second.pop();
   EXPECT_EQ(test_struct2.data1, test_struct.data1);
+  EXPECT_EQ(test_struct2.data3, test_struct.data3);
 }
 
 TEST(NoCopyStack, Test_push_emplace_and_head) {
