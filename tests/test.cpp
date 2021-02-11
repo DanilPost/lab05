@@ -8,14 +8,6 @@ TEST(Example, EmptyTest) {
     EXPECT_TRUE(true);
 }
 
-template <typename T>
-struct Struct
-{
-  T data1;
-  T data2;
-  T data3;
-};
-
 TEST(Test_push, Push_rvalue){
   Stack<int> first;
   first.push(5);
@@ -50,6 +42,13 @@ TEST(Test_stack, Test_copy) {
   EXPECT_FALSE(std::is_copy_assignable<Stack<int>>::value);
 }
 
+template <typename T>
+struct Struct
+{
+  T data1;
+  T data2;
+  T data3;
+};
 TEST(NoCopyStack, Test_Push_Pop){
   NoCopyStack<int> first;
   first.push(5);
